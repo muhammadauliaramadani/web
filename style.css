@@ -1,0 +1,451 @@
+:root {
+  /* mendefinisikan variabel warna utama */
+  --kopi: #b6895b; /* warna kopi */
+  --bg: #010101; /* warna latar belakang */
+}
+
+* {
+  /* mengatur elemen dasar */
+  margin: 0; /* menghapus margin semua elemen */
+  padding: 0; /* menghapus padding semua elemen */
+  box-sizing: border-box; /* memasukkan border dan padding ke dalam ukuran elemen */
+  outline: none; /* menghapus outline */
+  border: none; /* menghapus border */
+  text-decoration: none; /* menghapus dekorasi teks */
+}
+
+body {
+  /* mengatur gaya untuk elemen body */
+  font-family: "poppins", sans-serif; /* menetapkan font */
+  background-color: var(--bg); /* mengatur warna latar belakang */
+  color: #fff; /* warna teks putih */
+}
+
+/* navbar */
+.navbar {
+  /* mengatur gaya untuk navbar */
+  display: flex; /* menggunakan fleksibel layout */
+  justify-content: space-between; /* menempatkan elemen secara berjarak */
+  align-items: center; /* menyelaraskan elemen secara vertikal */
+  padding: 1.4rem 7%; /* menambahkan padding */
+  background-color: rgba(
+    1,
+    1,
+    1,
+    0.8
+  ); /* warna latar belakang semi-transparan */
+  border-bottom: 1px solid #5c452f; /* menambahkan garis bawah */
+  position: fixed; /* posisi tetap di layar */
+  top: 0; /* posisi di atas */
+  left: 0; /* posisi di kiri */
+  right: 0; /* posisi di kanan */
+  z-index: 9999; /* memastikan navbar berada di atas elemen lain */
+}
+
+.navbar .navbar-logo {
+  /* gaya untuk logo navbar */
+  font-size: 2rem; /* ukuran font */
+  font-weight: 700; /* ketebalan font */
+  color: #fff; /* warna font putih */
+  font-style: italic; /* font bergaya miring */
+}
+
+.navbar .navbar-logo span {
+  /* gaya untuk bagian logo dengan span */
+  color: var(--kopi); /* menggunakan warna kopi */
+}
+
+.navbar .navbar-nav a {
+  /* gaya untuk link navbar */
+  color: #fff; /* warna teks putih */
+  display: inline-block; /* menampilkan elemen secara inline */
+  font-size: 1.4rem; /* ukuran font */
+  margin: 0 1rem; /* jarak antar elemen */
+}
+
+.navbar .navbar-nav a:hover {
+  /* efek hover untuk link navbar */
+  color: var(--kopi); /* merubah warna menjadi kopi */
+}
+.navbar .navbar-nav a::after {
+  /* elemen dekoratif setelah link */
+  content: ""; /* konten kosong */
+  display: block; /* menampilkan elemen */
+  padding-bottom: 0.5rem; /* menambahkan padding bawah */
+  border-bottom: 0.1rem solid var(--kopi); /* garis bawah dengan warna kopi */
+  transform: scaleX(0); /* skala diatur ke 0 */
+  transition: 0.2s linear; /* efek transisi */
+}
+
+.navbar .navbar-nav a:hover::after {
+  /* efek hover untuk elemen dekoratif */
+  transform: scaleX(0.5); /* memperluas skala */
+}
+
+.navbar .navbar-extra a {
+  /* gaya untuk elemen ekstra di navbar */
+  color: #fff; /* warna teks putih */
+  margin: 0 0.5rem; /* jarak antar elemen */
+}
+.navbar .navbar-extra a:hover {
+  /* efek hover untuk elemen ekstra */
+  color: var(--kopi); /* merubah warna menjadi kopi */
+}
+
+#hamburger-menu {
+  /* gaya untuk menu hamburger */
+  display: none; /* tidak ditampilkan secara default */
+}
+
+/* hero section */
+
+.hero {
+  /* mengatur gaya untuk bagian hero */
+  min-height: 100vh; /* tinggi minimum 100% tinggi viewport */
+  display: flex; /* menggunakan fleksibel layout */
+  align-items: center; /* menyelaraskan elemen secara vertikal */
+  background-image: url("kopifoto.jpg"); /* gambar latar belakang */
+  background-repeat: no-repeat; /* tidak mengulang gambar */
+  background-size: cover; /* menutupi seluruh elemen */
+  background-position: center; /* posisi gambar di tengah */
+  position: relative; /* posisi relatif untuk elemen anak */
+}
+.hero::after {
+  /* elemen dekoratif setelah bagian hero */
+  content: ""; /* konten kosong */
+  display: block; /* menampilkan elemen */
+  position: absolute; /* posisi absolut */
+  width: 100%; /* lebar penuh */
+  height: 27%; /* tinggi 27% */
+  bottom: 0; /* posisi di bawah */
+  background: linear-gradient(
+    0deg,
+    rgba(1, 1, 3, 1) 8%,
+    rgba(255, 255, 255, 0) 50%
+  ); /* efek gradasi */
+}
+
+.hero .content {
+  /* gaya untuk konten di bagian hero */
+  padding: 1.4rem 7%; /* menambahkan padding */
+  max-width: 60rem; /* lebar maksimum konten */
+}
+
+.hero .content h1 {
+  /* gaya untuk judul di bagian hero */
+  font-size: 4em; /* ukuran font besar */
+  color: #fff; /* warna teks putih */
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5); /* bayangan teks */
+  line-height: 1.2; /* tinggi baris */
+}
+
+.hero .content h1 span {
+  /* gaya untuk span di judul */
+  color: var(--kopi); /* menggunakan warna kopi */
+}
+
+.hero .content p {
+  /* gaya untuk paragraf di bagian hero */
+  font-size: 2em; /* ukuran font besar */
+  margin-top: 1rem; /* jarak atas */
+  line-height: 1.4; /* tinggi baris */
+  font-weight: 1rem; /* ketebalan font */
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5); /* bayangan teks */
+  /* mix-blend-mode: difference; */ /* efek campuran */
+}
+
+.hero .content .cta {
+  /* gaya untuk tombol ajakan bertindak */
+  margin-top: 1rem; /* jarak atas */
+  display: inline-block; /* menampilkan elemen secara inline */
+  padding: 1rem 3rem; /* menambahkan padding */
+  font-size: 1.4rem; /* ukuran font */
+  color: #fff; /* warna teks putih */
+  background-color: var(--kopi); /* warna latar belakang kopi */
+  border-radius: 6px; /* sudut membulat */
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5); /* bayangan teks */
+}
+
+.about,
+.menu,
+.contact,
+.sanjungan {
+  /* gaya untuk bagian tentang */
+  padding: 8rem 7% 1.4rem; /* menambahkan padding */
+}
+
+.about h2,
+.menu h2,
+.contact h2,
+.sanjungan h2 {
+  /* gaya untuk judul bagian tentang */
+  text-align: center; /* teks rata tengah */
+  font-size: 2.6rem; /* ukuran font */
+  margin-bottom: 3rem; /* jarak bawah */
+}
+
+.about span,
+.menu span,
+.contact span,
+.sanjungan span {
+  /* gaya untuk span di bagian tentang */
+  color: var(--kopi); /* menggunakan warna kopi */
+}
+
+.about .row {
+  /* gaya untuk baris di bagian tentang */
+  display: flex; /* menggunakan fleksibel layout */
+}
+
+.about .row .about-img {
+  /* gaya untuk gambar di bagian tentang */
+  flex: 1 1 45rem; /* fleksibilitas layout */
+}
+
+.about .row .about-img img {
+  /* gaya untuk gambar */
+  width: 100%; /* lebar penuh */
+}
+.about .row .content {
+  /* gaya untuk konten di bagian tentang */
+  flex: 1 1 35rem; /* fleksibilitas layout */
+  padding: 0 1rem; /* menambahkan padding samping */
+}
+
+.about .row .content h3 {
+  /* gaya untuk subjudul di bagian tentang */
+  font-size: 1.8rem; /* ukuran font */
+  margin-bottom: 1rem; /* jarak bawah */
+}
+
+.about .row .content p {
+  /* gaya untuk paragraf di bagian tentang */
+  margin-bottom: 0.8rem; /* jarak bawah */
+  font-size: 1.5rem; /* ukuran font */
+  font-weight: 100; /* ketebalan font ringan */
+  line-height: 1.6; /* tinggi baris */
+}
+
+.menu h2,
+.contact h2 {
+  margin: 1rem;
+}
+/* menu */
+.menu p,
+.contact p {
+  max-width: 30rem;
+  margin: auto;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+.menu .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  justify-content: center;
+}
+.menu .row .menu-card {
+  text-align: center;
+  padding-bottom: 4rem;
+  padding-bottom: 1rem;
+}
+.menu .row .menu-card img {
+  border-radius: 50%;
+  width: 80%;
+}
+.menu .row .menu-card .menu-card-title {
+  margin-top: 1rem auto 0.5rem;
+}
+
+/* contact */
+.contact .row {
+  display: flex;
+  margin-top: 2rem;
+  background-color: #222;
+}
+.contact .row .map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+.contact .row form {
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--bg);
+  border: 1px solid #eee;
+  padding-left: 2rem;
+}
+
+.contact .row form .input-group input {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  background: none;
+  color: #fff;
+}
+
+.contact .row form .btn {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  color: #fff;
+  background-color: var(--kopi);
+  cursor: pointer;
+}
+
+/* footer */
+footer {
+  background-color: var(--kopi);
+  text-align: center;
+  padding: 1rem 0 3rem;
+  margin-top: 3rem;
+}
+footer .socials {
+  padding: 1rem 0;
+}
+footer .socials a {
+  color: #fff;
+  margin: 1rem;
+}
+footer .socials a:hover,
+footer .links a:hover {
+  color: var(--bg);
+}
+footer .links {
+  margin-bottom: 1.4rem;
+}
+footer .links a {
+  color: #fff;
+  padding: 0.7rem 1rem;
+}
+footer .credit {
+  font-size: 0.8rem;
+}
+footer .credit a {
+  color: var(--bg);
+  font-weight: 700;
+}
+
+/* media  */
+
+/* laptop */
+@media (max-width: 1366px) {
+  /* aturan gaya untuk layar laptop */
+  html {
+    font-size: 75%; /* mengurangi ukuran font dasar */
+  }
+
+  /* tablet */
+  @media (max-width: 758px) {
+    /* aturan gaya untuk layar tablet */
+    html {
+      font-size: 62.5%; /* mengurangi ukuran font dasar */
+    }
+
+    #hamburger-menu {
+      display: inline-block; /* menampilkan menu hamburger */
+    }
+  }
+
+  .navbar .navbar-nav {
+    /* gaya untuk navigasi di navbar */
+    position: absolute; /* posisi absolut */
+    top: 100%; /* posisi di bawah */
+    right: -100%; /* menyembunyikan elemen di kanan */
+    background-color: #fff; /* warna latar belakang putih */
+    width: 30rem; /* lebar elemen */
+    height: 100vh; /* tinggi penuh layar */
+  }
+  .navbar .navbar-nav.active {
+    /* kelas aktif untuk navigasi */
+    right: 0; /* menampilkan elemen */
+  }
+  .navbar .navbar-nav a {
+    /* gaya untuk link di navigasi */
+    color: var(--bg); /* warna teks sesuai latar belakang */
+    display: block; /* menampilkan elemen sebagai blok */
+    margin: 1.5rem; /* jarak antar elemen */
+    padding: 0.5rem; /* menambahkan padding */
+    font-size: 2rem; /* ukuran font */
+  }
+  .navbar .navbar-nav a::after {
+    /* elemen dekoratif setelah link */
+    transform-origin: 0 0; /* titik asal transformasi */
+  }
+  .navbar .navbar-nav a:hover::after {
+    /* efek hover untuk elemen dekoratif */
+    transform: scaleX(0.2); /* memperluas skala */
+  }
+
+  .about .row {
+    /* gaya untuk baris di bagian tentang */
+    flex-wrap: wrap; /* membungkus elemen */
+  }
+
+  .about .row .about-img img {
+    /* gaya untuk gambar di bagian tentang */
+    height: 24rem; /* tinggi gambar */
+    object-fit: cover; /* memotong gambar sesuai elemen */
+    object-position: center; /* posisi gambar di tengah */
+  }
+  .about .row .content {
+    /* gaya untuk konten di bagian tentang */
+    padding: 0; /* menghapus padding */
+  }
+  .about .row .content h3 {
+    /* gaya untuk subjudul di bagian tentang */
+    font-size: 1.6rem; /* mengurangi ukuran font */
+  }
+
+  .menu p {
+    /* gaya untuk paragraf di bagian menu */
+    font-size: 1.2rem; /* mengurangi ukuran font */
+  }
+
+  .contact .row {
+    /* gaya untuk baris di bagian tentang */
+    flex-wrap: wrap; /* membungkus elemen */
+  }
+
+  .contact .row map {
+    height: 30rem; /* tinggi gambar */
+  }
+
+  .contact .row form {
+    /* gaya untuk konten di bagian tentang */
+    padding-top: 0; /* menghapus padding */
+  }
+}
+
+/* hp */
+@media (max-width: 450px) {
+  /* aturan gaya untuk layar hp */
+  html {
+    font-size: 55%; /* mengurangi ukuran font dasar */
+  }
+  #hamburger-menu {
+    display: inline-block; /* menampilkan menu hamburger */
+  }
+
+  .navbar .navbar-nav {
+    /* gaya untuk navigasi di navbar */
+    position: absolute; /* posisi absolut */
+    top: 100%; /* posisi di bawah */
+    right: -100%; /* menyembunyikan elemen di kanan */
+    background-color: #fff; /* warna latar belakang putih */
+    width: 30rem; /* lebar elemen */
+    height: 100vh; /* tinggi penuh layar */
+  }
+  .navbar .navbar-nav .active {
+    /* kelas aktif untuk navigasi */
+    right: 0; /* menampilkan elemen */
+  }
+}
